@@ -33,6 +33,9 @@ public class ExceptionAdvice {
     @ExceptionHandler(CustomValidationException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     protected CommonResponse validationException(HttpServletRequest req, CustomValidationException e){
+        if (e.getMessage() != null) {
+            if (e.getMessage().equals("email-duplication")) return responseService.getFailResponse("중복되는 이메일입니다.");
+        }
         return responseService.getFailResponse("잘 못 된 입력 값입니다.");
     }
 }
