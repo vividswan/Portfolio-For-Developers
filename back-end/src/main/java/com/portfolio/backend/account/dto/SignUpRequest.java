@@ -26,6 +26,6 @@ public class SignUpRequest {
     private String nickname;
 
     @NotBlank
-    @Length(min=6, max = 50)
+    @Length(min=8, max = 50)
     private String password;
 }

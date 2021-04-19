@@ -13,11 +13,11 @@ import javax.validation.constraints.NotBlank;
 public class PasswordUpdateRequest {
 
     @NotBlank
-    @Length(min=6, max = 50)
+    @Length(min=8, max = 50)
     private String beforePassword;
 
     @NotBlank
-    @Length(min=6, max = 50)
+    @Length(min=8, max = 50)
     private String updatePassword;
 
 }
