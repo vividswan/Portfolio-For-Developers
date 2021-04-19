@@ -21,7 +21,7 @@
               ></v-text-field>
 
               <v-text-field
-                v-model="formData.name"
+                v-model="formData.nickname"
                 :counter="10"
                 :rules="nameRules"
                 label="Name"
@@ -110,22 +110,25 @@ export default {
     sameChk(password) {
       if (this.formData.password == password) return true
       else {
-        this.valid = false
         return false
       }
     },
     register(RegisterObj) {
       if (
         !this.formData.email ||
-        !this.formData.name ||
+        !this.formData.nickname ||
         !this.formData.password
       ) {
         this.isError = true
         this.errorMsg = "이메일과 닉네임과 비밀번호를 모두 입력해주세요."
         return
+      } else if (!this.sameChk) {
+        this.isError = true
+        this.errorMsg = "두 비밀번호가 같아야 합니다."
+        return
       }
       axios
-        .post("/signup", RegisterObj)
+        .post("/sign-up", RegisterObj)
         .then(() => {
           this.goToMain()
         })

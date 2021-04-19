@@ -20,13 +20,7 @@
                 <v-list-item-title>Login</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item
-              v-else
-              @click="logout"
-              link
-              router
-              :to="{ name: 'Home' }"
-            >
+            <v-list-item v-else @click="logout">
               <v-list-item-action>
                 <v-icon>mdi-account-off-outline</v-icon>
               </v-list-item-action>

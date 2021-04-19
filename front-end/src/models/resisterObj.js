@@ -1,7 +1,7 @@
 export default class LoginObj {
-  constructor(email, password, name) {
+  constructor(email, password, nickname) {
     this.email = email
     this.password = password
-    this.name = name
+    this.nickname = nickname
   }
 }

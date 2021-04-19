@@ -1,6 +1,7 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import axios from "axios"
+import router from "@/router"
 
 Vue.use(Vuex)
 
@@ -18,13 +19,14 @@ export default new Vuex.Store({
       state.isLogin = false
       state.userInfo = null
       localStorage.removeItem("access_token")
+      router.push({ name: "login" })
     }
   },
   actions: {
     getAccountInfo({ commit }) {
       let token = localStorage.getItem("access_token")
       axios
-        .get("/userinfo", {
+        .get("/account", {
           headers: {
             "X-AUTH-TOKEN": token
           }

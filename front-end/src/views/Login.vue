@@ -88,12 +88,12 @@ export default {
         return
       }
       axios
-        .post("/signin", LoginObj)
+        .post("/sign-in", LoginObj)
         .then((res) => {
-          let token = res.data.token
+          let token = res.data.data
           localStorage.setItem("access_token", token)
           this.$store.dispatch("getAccountInfo")
-          this.$router.push({ name: "Home" })
+          this.$router.push({ name: "home" })
         })
         .catch((err) => {
           if (err.response) {
