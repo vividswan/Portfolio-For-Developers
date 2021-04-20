@@ -1,4 +1,4 @@
-export default class LoginObj {
+export default class ResisterObj {
   constructor(email, password, nickname) {
     this.email = email
     this.password = password

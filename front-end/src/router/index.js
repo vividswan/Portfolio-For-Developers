@@ -26,21 +26,22 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue")
+    component: () =>
+      import(/* webpackChunkName: "home" */ "../views/main-home.vue")
   },
   {
     path: "/login",
     name: "login",
     beforeEnter: rejectAuthUser,
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Login.vue")
+      import(/* webpackChunkName: "login" */ "../views/account-login.vue")
   },
   {
     path: "/register",
     name: "register",
     beforeEnter: rejectAuthUser,
     component: () =>
-      import(/* webpackChunkName: "register" */ "../views/Register.vue")
+      import(/* webpackChunkName: "register" */ "../views/account-register.vue")
   }
 ]
 
