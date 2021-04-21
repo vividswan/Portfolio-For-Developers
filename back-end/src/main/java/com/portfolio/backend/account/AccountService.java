@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.Collections;
 import java.util.UUID;
 
@@ -57,6 +57,7 @@ public class AccountService {
         return responseService.getSingleResponse(jwtTokenProvider.createToken(account.getEmail(), account.getRoles()));
     }
 
+    @Transactional(readOnly = true)
     public SingleResponse<AccountInfoResponse> getAccountInfo(String email) {
         Account account = accountRepository.findByEmail(email)
                 .orElseThrow(CustomUserNotFoundException::new);
