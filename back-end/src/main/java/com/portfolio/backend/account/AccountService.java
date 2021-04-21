@@ -32,6 +32,9 @@ public class AccountService {
         if(accountRepository.findByEmail(dto.getEmail()).isPresent()){
             throw new CustomValidationException("email-duplication");
         }
+        if(accountRepository.findByNickname(dto.getNickname()).isPresent()){
+            throw new CustomValidationException("nickname-duplication");
+        }
 
         Account account = Account.builder()
                 .email(dto.getEmail())

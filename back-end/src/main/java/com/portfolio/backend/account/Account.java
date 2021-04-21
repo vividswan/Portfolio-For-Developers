@@ -1,6 +1,7 @@
 package com.portfolio.backend.account;
 
 import com.portfolio.backend.config.BaseTimeEntity;
+import com.portfolio.backend.portfolio.entitiy.Portfolio;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,7 +22,7 @@ public class Account extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nickname;
 
     @Column(nullable = false, unique = true)
