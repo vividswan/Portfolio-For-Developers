@@ -1,5 +1,6 @@
 package com.portfolio.backend.model.response;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,15 @@ public class ResponseService {
     public <T> ListResponse<T> getListResponse(List<T> list){
         ListResponse<T> res = new ListResponse<>();
         res.setList(list);
+        res.setCode(0);
+        res.setMessage("Success");
+        res.setSuccess(true);
+        return res;
+    }
+
+    public <T> PageResponse<T> getPageResponse(Page<T> page){
+        PageResponse<T> res = new PageResponse<>();
+        res.setPage(page);
         res.setCode(0);
         res.setMessage("Success");
         res.setSuccess(true);
