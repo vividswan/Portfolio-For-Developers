@@ -1,5 +1,7 @@
 package com.portfolio.backend.config.advice;
 
+import com.portfolio.backend.config.advice.exception.CustomDataNotFoundException;
+import com.portfolio.backend.config.advice.exception.CustomNotOwnerException;
 import com.portfolio.backend.config.advice.exception.CustomUserNotFoundException;
 import com.portfolio.backend.config.advice.exception.CustomValidationException;
 import com.portfolio.backend.model.response.CommonResponse;
@@ -38,5 +40,17 @@ public class ExceptionAdvice {
             else if(e.getMessage().equals("nickname-duplication")) return responseService.getFailResponse("중복되는 닉네임입니다.");
         }
         return responseService.getFailResponse("잘 못 된 입력 값입니다.");
+    }
+
+    @ExceptionHandler(CustomDataNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    protected CommonResponse dataNotFoundException(HttpServletRequest req, CustomDataNotFoundException e){
+        return responseService.getFailResponse("잘 못 된 조회 정보입니다.");
+    }
+
+    @ExceptionHandler(CustomNotOwnerException.class)
+    @ResponseStatus(HttpStatus.NON_AUTHORITATIVE_INFORMATION)
+    protected CommonResponse dataNotFoundException(HttpServletRequest req, CustomNotOwnerException e){
+        return responseService.getFailResponse("해당 권한이 없습니다.");
     }
 }
