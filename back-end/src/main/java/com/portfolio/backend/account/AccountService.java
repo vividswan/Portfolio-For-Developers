@@ -10,6 +10,8 @@ import com.portfolio.backend.config.security.JwtTokenProvider;
 import com.portfolio.backend.model.response.CommonResponse;
 import com.portfolio.backend.model.response.ResponseService;
 import com.portfolio.backend.model.response.SingleResponse;
+import com.portfolio.backend.portfolio.repository.PortfolioRepository;
+import com.portfolio.backend.portfolio.entitiy.Portfolio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,7 @@ public class AccountService {
     private final PasswordEncoder passwordEncoder;
     private final ResponseService responseService;
     private final JwtTokenProvider jwtTokenProvider;
+    private final PortfolioRepository portfolioRepository;
 
     public CommonResponse signUp(SignUpRequest dto) {
         if(accountRepository.findByEmail(dto.getEmail()).isPresent()){
@@ -47,6 +50,13 @@ public class AccountService {
                 .build();
 
         accountRepository.save(account);
+
+        Portfolio portfolio = Portfolio.builder()
+                .email(dto.getEmail())
+                .accountNickname(dto.getNickname())
+                .build();
+
+        portfolioRepository.save(portfolio);
 
         return responseService.getSuccessResponse();
     }

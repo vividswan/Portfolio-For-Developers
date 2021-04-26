@@ -52,4 +52,7 @@ public class Account extends BaseTimeEntity {
         this.nickname = nickname;
     }
 
+    @OneToOne(mappedBy = "account")
+    private Portfolio portfolio;
+
 }
