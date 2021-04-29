@@ -1,5 +1,6 @@
 package com.portfolio.backend.portfolio.entitiy;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.portfolio.backend.account.Account;
 import com.portfolio.backend.config.BaseTimeEntity;
@@ -29,6 +30,7 @@ public class Portfolio extends BaseTimeEntity {
     private Long id;
 
     @OneToOne
+    @JsonBackReference
     @JoinColumn(name = "account_id")
     private Account account;
 

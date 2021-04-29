@@ -52,6 +52,7 @@ public class AccountService {
         accountRepository.save(account);
 
         Portfolio portfolio = Portfolio.builder()
+                .account(account)
                 .email(dto.getEmail())
                 .accountNickname(dto.getNickname())
                 .build();

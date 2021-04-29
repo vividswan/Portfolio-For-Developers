@@ -1,5 +1,6 @@
 package com.portfolio.backend.account;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.portfolio.backend.config.BaseTimeEntity;
 import com.portfolio.backend.portfolio.entitiy.Portfolio;
 import lombok.AllArgsConstructor;
@@ -53,6 +54,7 @@ public class Account extends BaseTimeEntity {
     }
 
     @OneToOne(mappedBy = "account")
+    @JsonIgnoreProperties({"account"})
     private Portfolio portfolio;
 
 }
