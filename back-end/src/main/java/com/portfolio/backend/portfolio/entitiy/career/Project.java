@@ -1,6 +1,7 @@
 package com.portfolio.backend.portfolio.entitiy.career;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.portfolio.backend.account.Account;
 import com.portfolio.backend.portfolio.dto.CareerDataRequest;
 import com.portfolio.backend.portfolio.entitiy.Portfolio;
@@ -28,6 +29,7 @@ public class Project extends Career {
     private String url;
 
     @OneToMany(mappedBy = "project",cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties({"project"})
     private Set<TechStack>  techStacks = new HashSet<>();
 
     @JsonBackReference
@@ -56,9 +58,9 @@ public class Project extends Career {
                     this.url = url;
     }
 
-
     public void updateProject(CareerDataRequest dto){
         super.updateCareer(dto.getName(),dto.getContents(),dto.getStartDate(), dto.getEndDate());
         this.url = dto.getUrl();
     }
+
 }

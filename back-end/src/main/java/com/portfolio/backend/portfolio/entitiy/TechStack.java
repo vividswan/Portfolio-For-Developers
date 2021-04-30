@@ -1,5 +1,7 @@
 package com.portfolio.backend.portfolio.entitiy;
 
+import com.portfolio.backend.account.Account;
+import com.portfolio.backend.portfolio.type.DetailsType;
 import com.portfolio.backend.portfolio.type.TechType;
 import com.portfolio.backend.portfolio.entitiy.career.Project;
 import lombok.AllArgsConstructor;
@@ -34,12 +36,20 @@ public class TechStack {
     }
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "portfolio_id")
     private Portfolio portfolio;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
     private Project project;
+
+    protected Portfolio getPortfolio(){
+        return this.portfolio;
+    }
+
+    protected Project getProject(){
+        return this.project;
+    }
 
 }
