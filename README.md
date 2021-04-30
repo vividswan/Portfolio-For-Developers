@@ -102,7 +102,7 @@ http://localhost:3000
 
 👤 **vividswan**
 
-* Website: vividswan.github.io
+* Website: [vividswan.github.io](https://vividswan.github.io/)
 * Github: [@vividswan](https://github.com/vividswan)
 
 ## 🤝 Contributing
