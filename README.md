@@ -20,7 +20,7 @@
 
 ## 기술스택
 
-<p align="center">
+<p>
   <img src="https://img.shields.io/badge/-SpringBoot-blue"/>&nbsp
   <img src="https://img.shields.io/badge/-JPA-red"/>&nbsp
   <img src="https://img.shields.io/badge/-MySQL-yellow"/>&nbsp
