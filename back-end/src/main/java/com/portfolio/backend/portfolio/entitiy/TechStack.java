@@ -52,4 +52,15 @@ public class TechStack {
         return this.project;
     }
 
+    public boolean isAuthorized(DetailsType detailsType, Account account){
+        if(detailsType.equals(DetailsType.portfolio)){
+            if(this.portfolio.getAccount().equals(account)) return true;
+            else return false;
+        }
+        else{
+            if(this.project.getAccount().equals(account)) return true;
+            else return false;
+        }
+    }
+
 }
