@@ -47,7 +47,7 @@
   - vuetify 2.4.0
 
 
-## 개발과정
+## 개발과정 (진행 중)
 
 [1. 기본 환경 세팅](https://vividswan.github.io/2021/03/21/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-1.-%EA%B8%B0%EB%B3%B8-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85.html)
 
