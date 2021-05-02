@@ -67,6 +67,8 @@
 
 [7. [백엔드] 포트폴리오 데이터 모델링](https://vividswan.github.io/2021/04/26/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-7.-%EB%B0%B1%EC%97%94%EB%93%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EB%A7%81.html)
 
+[8. [백엔드] Request, Response DTO 생성](https://vividswan.github.io/2021/04/30/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-8.-%EB%B0%B1%EC%97%94%EB%93%9C-Request,-Response-DTO-%EC%83%9D%EC%84%B1.html)
+
 ## Entity Relationship Diagram (ERD)
 
 <img width="537" alt="erd" src="https://user-images.githubusercontent.com/54254402/116669987-31e52e80-a9da-11eb-8c81-e5d174b212d9.png">
