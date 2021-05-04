@@ -24,7 +24,8 @@ const rejectAuthUser = (to, from, next) => {
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
+    alias: "/home",
     name: "home",
     component: () =>
       import(/* webpackChunkName: "home" */ "../views/main-home.vue")
