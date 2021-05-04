@@ -14,9 +14,9 @@
 
 > 개발자를 위한 포트폴리오 생성 웹 프로젝트
 
-### 🏠 [프로젝트 페이지(진행 중)]()
+### 🏠 [프로젝트 페이지(개발 진행 중)](http://developers-portfolio.site/)
 
-### ✨ [Swagger API 문서]()
+### ✨ [Swagger API 문서](http://developers-portfolio.site/docs/swagger-ui.html)
 
 ## 기술스택
 
