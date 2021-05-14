@@ -4,22 +4,30 @@
       <v-app id="inspire">
         <v-navigation-drawer v-model="drawer" app clipped>
           <v-list dense>
-            <v-list-item link router :to="{ name: 'home' }">
-              <v-list-item-action>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Home</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item v-if="!isLogin" link router :to="{ name: 'login' }">
-              <v-list-item-action>
-                <v-icon>mdi-account</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Login</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+            <router-link :to="{ name: 'home' }" class="router-button">
+              <v-list-item link>
+                <v-list-item-action>
+                  <v-icon>mdi-home</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title>Home</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link
+              v-if="!isLogin"
+              :to="{ name: 'login' }"
+              class="router-button"
+            >
+              <v-list-item link>
+                <v-list-item-action>
+                  <v-icon>mdi-account</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title>Login</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
             <v-list-item v-else @click="logout">
               <v-list-item-action>
                 <v-icon>mdi-account-off-outline</v-icon>
@@ -28,6 +36,37 @@
                 <v-list-item-title>Logout</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <router-link
+              v-if="!isLogin"
+              :to="{ name: 'login', params: { getAccountPort: true } }"
+              class="router-button"
+            >
+              <v-list-item link>
+                <v-list-item-action>
+                  <v-icon>mdi-human-greeting</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title>MyPortfolio</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link
+              v-else
+              :to="{
+                name: 'view-portfolio',
+                params: { nickname: userInfo.nickname }
+              }"
+              class="router-button"
+            >
+              <v-list-item link>
+                <v-list-item-action>
+                  <v-icon>mdi-human-greeting</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title>MyPortfolio</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
             <v-list-item link>
               <v-list-item-action>
                 <v-icon>mdi-cog</v-icon>
@@ -78,3 +117,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.router-button {
+  text-decoration: none;
+}
+</style>

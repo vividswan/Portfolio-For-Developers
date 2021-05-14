@@ -43,6 +43,14 @@ const routes = [
     beforeEnter: rejectAuthUser,
     component: () =>
       import(/* webpackChunkName: "register" */ "../views/account-register.vue")
+  },
+  {
+    path: "/portfolio",
+    name: "view-portfolio",
+    component: () =>
+      import(
+        /* webpackChunkName: "view-portfoilo" */ "../views/view-portfolio.vue"
+      )
   }
 ]
 
